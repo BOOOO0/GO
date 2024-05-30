@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"reflect"
 	"strings"
+
+	"github.com/BOOOO0/banking"
 )
 
 type person struct{
@@ -99,4 +101,9 @@ func main() {
 		fmt.Println(key, value)
 	}
 	fmt.Println(boo0, boo0.name)
+
+
+	account := banking.BankAccout{}
+	account.Owner="boo"
+	fmt.Println(account)
 }
