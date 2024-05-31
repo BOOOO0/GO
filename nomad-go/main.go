@@ -2,10 +2,12 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"reflect"
 	"strings"
 
 	"github.com/BOOOO0/banking"
+	"github.com/BOOOO0/dict"
 )
 
 type person struct{
@@ -103,7 +105,26 @@ func main() {
 	fmt.Println(boo0, boo0.name)
 
 
-	account := banking.BankAccout{}
-	account.Owner="boo"
-	fmt.Println(account)
+	account := banking.NewAccount("boo")
+	account.Deposit(10)
+	err := account.Withdraw(5)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	fmt.Println(account.String())
+
+	dictionary := dict.Dictionary{}
+	dictionary["1"] = "hello"
+	fmt.Println(dictionary)
+	definition, err := dictionary.Search("1")
+	if err != nil {
+		log.Fatalln(err)
+	}
+	fmt.Println(definition)
+
+	err2 := dictionary.Add("hi", "hello")
+	if err2 != nil {
+		log.Fatalln(err2)
+	}
+	fmt.Println(dictionary)
 }
