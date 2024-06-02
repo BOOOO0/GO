@@ -157,3 +157,7 @@ fmt.Println(*b)
 - `all goroutines are asleep - deadlock!` 문구를 보면 주어진 고루틴은 모두 채널을 통해 데이터를 보냈고 끝났다는 말 같다.
 
 - 채널의 send receive의 기준은 main 함수 main -> 고루틴 함수가 send
+
+## container
+
+- 컨테이너 패키지에는 이중 연결 리스트, 원형 리스트, 힙이 있다. 큐와 스택은 리스트, 배열 기반으로 개념만 적용해서 사용할 수 있으니 힙이 제공되는 것 만으로도 자료구조 지원이 충분한 것 같다.
